@@ -2483,7 +2483,7 @@ input_handler(void *data, struct wl_registry *registry, uint32_t id,
 {
     struct xwl_screen *xwl_screen = data;
 
-    if (strcmp(interface, "wl_seat") == 0 && version >= 3) {
+    if (strcmp(interface, "wl_seat") == 0 && version >= 2) {
         create_input_device(xwl_screen, id, version);
         xwl_screen->expecting_event++;
     } else if (strcmp(interface, "zwp_relative_pointer_manager_v1") == 0) {
